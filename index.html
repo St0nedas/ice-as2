@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src = "scripts.js">loadTeamsList()</script>
+	</head>
+	
+	<body>
+		<div class = "container">
+			<img src = "header.png">
+		</div>
+		
+		<div class = "navbar-main">
+			
+			<div class="button-nav">
+				<button onclick="showLeagueTable()" class="button-nav-main">League Table</button>
+			</div>
+			
+			<select id = "team-select" onchange = "teamSelectChanged(this)">
+				<option value="">Select Your Team</option>
+			</select>
+			
+		</div>
+		
+		<div class = "content-container">
+			<div class = "content-navbar" id = "content-navbar-id">
+				<h2>League Table</h2>
+			</div>
+			
+			<div class = "content-wrapper" id = "league-table-content">
+				<table id = "league-table" style = "width: 100%">
+					<tr>
+						<th></th>
+						<th>Team</th>
+						<th>GP</th> 
+						<th>PTS</th>
+						<th>W</th>
+						<th>D</th>
+						<th>L</th>
+						<th>GF</th>
+						<th>GA</th>
+						<th>GD</th>
+					</tr>
+				</table>
+			</div>
+			
+			<div id = "team-content-wrapper">
+				<div class = "navbar-mini">
+					<button id = "team-current-stats" class = "nav-button-mini" onclick = "showCurrentStats()">Current Stats</button>
+					<button id = "team-current-lastround" class = "nav-button-mini" onclick = "showAllGames(1)">Last Round</button>
+					<button id = "team-current-last5round" class = "nav-button-mini" onclick = "showAllGames(5)">Last 5 Rounds</button>
+					<button id = "team-current-allgames" class = "nav-button-mini" onclick = "showAllGames(-1)">All Rounds</button>
+					<button id = "team-current-players" class = "nav-button-mini" onclick = "loadPlayerList()">Player List</button>
+					
+					<select id = "opponent-select" onchange = "compareTeamChanged(this)">
+						<option value="" style = "float:right">Compare To Team</option>
+					</select>
+					
+				</div>
+				
+				<div class = "content-wrapper">
+					<div id = "team-content">
+						<table id = "player-cards" style = "width: 100%;">
+						<tr><br></tr>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>		
